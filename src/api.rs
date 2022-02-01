@@ -48,7 +48,7 @@ impl GameClient {
     }
 
     /// Query the endpoint and automagically deserialize the json into the desired type
-    async fn get_data<T: for<'de> Deserialize<'de>, U: IntoUrl>(
+    pub async fn get_data<T: for<'de> Deserialize<'de>, U: IntoUrl>(
         &self,
         endpoint: U,
     ) -> Result<T, QueryError> {
